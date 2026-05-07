@@ -121,18 +121,29 @@ The project includes a multi-tab interactive analytical dashboard built with Plo
 ### National Trend Analysis
 
 LOESS-smoothed national consumption trends with policy intervention markers and changepoint detection.
+<img width="975" height="548" alt="image" src="https://github.com/user-attachments/assets/dead746d-954a-4161-8aef-db1f57adddd4" />
+
 
 ### State Clustering Analysis
 
 K-means clustering identifying groups of states with similar tax burden and cigarette consumption behavior.
+<img width="975" height="545" alt="image" src="https://github.com/user-attachments/assets/c619ec8c-2a82-4973-a9bb-93e786c51138" />
+
 
 ### Geographic Distribution
 
 Animated choropleth visualization showing temporal changes in cigarette tax burden across U.S. states.
+<img width="975" height="538" alt="image" src="https://github.com/user-attachments/assets/02f18d3e-e1dd-4338-8f50-c7693ad502a8" />
+<img width="975" height="541" alt="image" src="https://github.com/user-attachments/assets/0e485362-eed0-47e3-ad9c-6a11d704ab69" />
+
 
 ### Regional Comparisons
 
 Interactive comparison tools highlighting regional consumption disparities and long-term behavioral trends.
+<img width="975" height="533" alt="image" src="https://github.com/user-attachments/assets/c051083c-b418-40e8-bf91-36dafe02aa73" />
+<img width="975" height="546" alt="image" src="https://github.com/user-attachments/assets/7e2e6fc9-0e80-42ef-be5d-d77e9c07978f" />
+
+
 
 ---
 
@@ -188,20 +199,6 @@ This project demonstrates:
 
 ---
 
-## Repository Structure
-
-```bash
-.
-├── assets/
-│   └── workflow.png
-├── data/
-├── notebooks/
-│   └── analysis.ipynb
-├── tobacco_analysis_dashboard.py
-├── requirements.txt
-├── README.md
-└── LICENSE
-```
 
 ---
 
