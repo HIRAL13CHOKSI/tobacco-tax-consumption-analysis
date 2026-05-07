@@ -218,7 +218,7 @@ Potential extensions include:
 ## Author
 
 **Hiral Choksi**
-Graduate Student — M.S. Computer Science & Engineering
+Graduate Student - M.S. Computer Science & Engineering
 University of Connecticut
 Graduate Research Assistant, CIRCA
 
