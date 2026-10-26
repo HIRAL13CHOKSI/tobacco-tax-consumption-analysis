@@ -41,7 +41,7 @@ Open **http://127.0.0.1:8060**. The CSV is supplied separately and is not commit
 
 - [Original final course report](docs/CSE5520_Final_Report_Hiral_Choksi.pdf): statistical modeling, diagnostics, and visual analytics.
 - [Portfolio project summary](Hiral_Choksi_Tobacco_Tax_Policy_Analysis.pdf).
-- A recorded demonstration exists separately; a public video URL has not yet been added.
+- [Watch the project explanation by Hiral Choksi](https://drive.google.com/file/d/1VQPzudktN7orBkBAI6gwrOCVk6wLSccK/view?usp=sharing): recorded walkthrough of the tobacco tax and consumption analysis.
 
 ### Checks
 
