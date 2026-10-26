@@ -39,7 +39,7 @@ Open **http://127.0.0.1:8060**. The CSV is supplied separately and is not commit
 
 ### Project evidence
 
-- The original final course report documents statistical modeling, diagnostics, and visual analytics; publishing that full PDF requires separate approval.
+- [Original final course report](docs/CSE5520_Final_Report_Hiral_Choksi.pdf): statistical modeling, diagnostics, and visual analytics.
 - [Portfolio project summary](Hiral_Choksi_Tobacco_Tax_Policy_Analysis.pdf).
 - A recorded demonstration exists separately; a public video URL has not yet been added.
 
