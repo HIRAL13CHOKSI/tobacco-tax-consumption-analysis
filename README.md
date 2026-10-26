@@ -6,6 +6,53 @@ An applied policy analytics and geospatial data analysis project examining the r
 
 <img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/e489cce9-2956-4fb1-b9f6-36199f49a538" />
 
+
+## Run locally
+
+Tested with Python 3.12. The dashboard uses the original long-format **The Tax Burden on Tobacco (1970–2019)** CSV and filters to 1990–2019, retaining all 50 states and DC (1,530 state-year records for the supplied complete export).
+
+```bash
+git clone https://github.com/HIRAL13CHOKSI/tobacco-tax-consumption-analysis.git
+cd tobacco-tax-consumption-analysis
+python -m venv .venv
+```
+
+Activate with `source .venv/bin/activate` on macOS/Linux or `.venv\\Scripts\\Activate.ps1` in Windows PowerShell, then:
+
+```bash
+python -m pip install -r requirements.txt
+python tobacco_analysis_dashboard.py --data "/path/to/The_Tax_Burden_on_Tobacco__1970-2019.csv"
+```
+
+Open **http://127.0.0.1:8060**. The CSV is supplied separately and is not committed. Pass its local path with `--data`; no Colab paths, notebook commands, or API keys are required. The app defaults to localhost with debug disabled.
+
+### Data preparation and implementation notes
+
+- Required raw columns: `LocationAbbr`, `Year`, `SubMeasureDesc`, and `Data_Value`.
+- The loader pivots the six source measures into one row per state-year and rejects duplicate records, missing measures, nonnumeric values, and invalid prices.
+- State tax share = state tax per pack / average cost per pack. Federal share = (combined federal and state tax − state tax) / average cost per pack. Shares are fractions; multiply by 100 for percentage points. The source-reported combined percentage is retained separately because rounding may differ.
+- Pack sales per capita are the consumption proxy. The overview uses an unweighted mean across jurisdictions, not a population-weighted national estimate.
+- Four K-means clusters retain the original dashboard's two unscaled inputs (mean state tax share and mean consumption), with `random_state=42` and explicit `n_init=10`. Consumption's larger numerical scale can dominate distances; this repair does not introduce a new clustering method.
+- The seven original tabs remain, with a light/dark chart selector and a searchable, sortable data table. The binned tax-share trend is descriptive rather than a formal elasticity estimate.
+- Maps use Plotly's built-in USA-state locations. Browser map rendering may require access to Plotly's geographic assets; no unused GeoJSON download blocks Python startup.
+- Regression coefficients and diagnostics are documented in the final report; this dashboard repair does not reproduce that separate regression analysis.
+
+### Project evidence
+
+- [Original final course report](docs/CSE5520_Final_Report_Hiral_Choksi.pdf): statistical modeling, diagnostics, and visual analytics.
+- [Portfolio project summary](Hiral_Choksi_Tobacco_Tax_Policy_Analysis.pdf).
+- A recorded demonstration exists separately; a public video URL has not yet been added.
+
+### Checks
+
+```bash
+python -m unittest discover -s tests -v
+python tobacco_analysis_dashboard.py --help
+```
+
+Tests use synthetic data to verify reshaping, tax shares, input errors, tab generation, chart themes, comparisons, and HTTP endpoints. The supplied CSV was also checked locally without committing it. Full browser visual verification and reproduction of historical statistical results remain separate checks.
+
+
 ## Project Overview
 
 This project explores how state-level tobacco taxation policies influence cigarette consumption behavior across different regions of the United States between 1990 and 2019. The analysis combines statistical trend exploration, clustering, geospatial visualization, and interactive dashboards to identify long-term behavioral patterns, regional disparities, and policy-related shifts in consumption trends.
@@ -223,5 +270,6 @@ University of Connecticut
 Graduate Research Assistant, CIRCA
 
 GitHub: [https://github.com/HIRAL13CHOKSI](https://github.com/HIRAL13CHOKSI)
+
 
 
