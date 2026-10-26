@@ -17,7 +17,7 @@ cd tobacco-tax-consumption-analysis
 python -m venv .venv
 ```
 
-Activate with `source .venv/bin/activate` on macOS/Linux or `.venv\\Scripts\\Activate.ps1` in Windows PowerShell, then:
+Activate with `source .venv/bin/activate` on macOS/Linux or `.venv\Scripts\Activate.ps1` in Windows PowerShell, then:
 
 ```bash
 python -m pip install -r requirements.txt
@@ -77,9 +77,9 @@ Evaluate how state-level tax policy interventions affect cigarette consumption p
 
 ### Panel Dataset
 
-* 50 U.S. States
+* 50 U.S. states and Washington, D.C. (51 jurisdictions)
 * 1990–2019
-* 1,500+ observations
+* 1,530 state-year observations in the supplied complete export
 
 ### Variables Included
 
@@ -153,13 +153,13 @@ The project includes a multi-tab interactive analytical dashboard built with Plo
 
 ### Dashboard Modules
 
-1. National Trend Analysis
-2. State Clustering Visualization
-3. Geographic Map Analysis
-4. Elasticity Exploration
-5. State-to-State Comparison
-6. Regional Pattern Analysis
-7. Data Table & Summary Metrics
+1. Overview — consumption trend, LOESS smoothing, policy markers, and changepoints
+2. State Clusters — K-means grouping by mean tax share and consumption
+3. Correlation — heatmap of consumption, tax shares, price, and revenue
+4. Geographic Maps — animated state tax-share choropleth
+5. Elasticity — descriptive binned tax-share/consumption trend
+6. Compare States — consumption trends for two selected jurisdictions
+7. Data Table — searchable, sortable state-year records
 
 ---
 
