@@ -26,6 +26,13 @@ python tobacco_analysis_dashboard.py --data "/path/to/The_Tax_Burden_on_Tobacco_
 
 Open **http://127.0.0.1:8060**. The CSV is supplied separately and is not committed. Pass its local path with `--data`; no Colab paths, notebook commands, or API keys are required. The app defaults to localhost with debug disabled.
 
+### Download the dataset
+
+- [Download the source CSV from CDC](https://data.cdc.gov/api/v3/views/7nwe-3aj9/export.csv?accessType=DOWNLOAD).
+- [Dataset description and source metadata](https://catalog.data.gov/dataset/the-tax-burden-on-tobacco-1970-2019).
+
+Save the CSV locally, then pass its actual downloaded filename to `--data` in the startup command above. The source covers 1970–2019; the dashboard selects 1990–2019 automatically.
+
 ### Data preparation and implementation notes
 
 - Required raw columns: `LocationAbbr`, `Year`, `SubMeasureDesc`, and `Data_Value`.
