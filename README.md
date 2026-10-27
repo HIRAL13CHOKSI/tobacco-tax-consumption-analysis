@@ -17,7 +17,7 @@ cd tobacco-tax-consumption-analysis
 python -m venv .venv
 ```
 
-Activate with `source .venv/bin/activate` on macOS/Linux or `.venv\\Scripts\\Activate.ps1` in Windows PowerShell, then:
+Activate with `source .venv/bin/activate` on macOS/Linux or `.venv\Scripts\Activate.ps1` in Windows PowerShell, then:
 
 ```bash
 python -m pip install -r requirements.txt
@@ -25,6 +25,13 @@ python tobacco_analysis_dashboard.py --data "/path/to/The_Tax_Burden_on_Tobacco_
 ```
 
 Open **http://127.0.0.1:8060**. The CSV is supplied separately and is not committed. Pass its local path with `--data`; no Colab paths, notebook commands, or API keys are required. The app defaults to localhost with debug disabled.
+
+### Download the dataset
+
+- [Download the source CSV from CDC](https://data.cdc.gov/api/v3/views/7nwe-3aj9/export.csv?accessType=DOWNLOAD).
+- [Dataset description and source metadata](https://catalog.data.gov/dataset/the-tax-burden-on-tobacco-1970-2019).
+
+Save the CSV locally, then pass its actual downloaded filename to `--data` in the startup command above. The source covers 1970–2019; the dashboard selects 1990–2019 automatically.
 
 ### Data preparation and implementation notes
 
@@ -41,7 +48,7 @@ Open **http://127.0.0.1:8060**. The CSV is supplied separately and is not commit
 
 - [Original final course report](docs/CSE5520_Final_Report_Hiral_Choksi.pdf): statistical modeling, diagnostics, and visual analytics.
 - [Portfolio project summary](Hiral_Choksi_Tobacco_Tax_Policy_Analysis.pdf).
-- A recorded demonstration exists separately; a public video URL has not yet been added.
+- [Watch the project explanation by Hiral Choksi](https://drive.google.com/file/d/1VQPzudktN7orBkBAI6gwrOCVk6wLSccK/view?usp=sharing): recorded walkthrough of the tobacco tax and consumption analysis.
 
 ### Checks
 
@@ -77,9 +84,9 @@ Evaluate how state-level tax policy interventions affect cigarette consumption p
 
 ### Panel Dataset
 
-* 50 U.S. States
+* 50 U.S. states and Washington, D.C. (51 jurisdictions)
 * 1990–2019
-* 1,500+ observations
+* 1,530 state-year observations in the supplied complete export
 
 ### Variables Included
 
@@ -153,13 +160,13 @@ The project includes a multi-tab interactive analytical dashboard built with Plo
 
 ### Dashboard Modules
 
-1. National Trend Analysis
-2. State Clustering Visualization
-3. Geographic Map Analysis
-4. Elasticity Exploration
-5. State-to-State Comparison
-6. Regional Pattern Analysis
-7. Data Table & Summary Metrics
+1. Overview — consumption trend, LOESS smoothing, policy markers, and changepoints
+2. State Clusters — K-means grouping by mean tax share and consumption
+3. Correlation — heatmap of consumption, tax shares, price, and revenue
+4. Geographic Maps — animated state tax-share choropleth
+5. Elasticity — descriptive binned tax-share/consumption trend
+6. Compare States — consumption trends for two selected jurisdictions
+7. Data Table — searchable, sortable state-year records
 
 ---
 
